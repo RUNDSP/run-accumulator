@@ -18,7 +18,7 @@
 
 version=`cat package.json | grep version | cut -d: -f2 | sed -e "s/\"//g" | sed -e "s/ //g" | sed -e "s/\,//g"`
 
-functionName=analytics-batcher-stage
+functionName=wins-lambda
 filename=$functionName-$version.zip
 region=us-east-1
 
@@ -28,6 +28,6 @@ rm $filename 2>&1 >> /dev/null
 
 zip -x \*node_modules/protobufjs/tests/\* -r $filename index.js package.json node_modules/ && mv -f $filename ../dist/$filename
 
-if [ "$1" = "true" ]; then
-  aws lambda update-function-code --function-name $functionName --zip-file fileb://../dist/$filename --region $region
-fi
+#if [ "$1" = "true" ]; then
+#  aws lambda update-function-code --function-name $functionName --zip-file fileb://../dist/$filename --region $region
+#fi

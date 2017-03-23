@@ -1,19 +1,12 @@
 {
-    "name": "lambda-stream-to-S3",
-    "description": "An AWS Lambda function that forwards data from a Kinesis Update Stream to an s3 bucket",
+    "name": "lambda-copy-files-bucket",
+    "description": "An AWS Lambda function that forwards data from a source S3 bucket to an s3 bucket partitioned by date",
     "version": "1.0.0",
     "dependencies": {
         "async": "1.5.2",
-        "aws-kpl-deagg": "2.1.1",
-        "crypto": "*"
     },
 
-    "keywords": ["amazon", "aws", "kinesis", "s3", "lambda"],
-
-    "author": {
-        "name": "Lee DuBose",
-        "email": "lee.dubose@publicismedia.com"
-    },
+    "keywords": ["kinesis"],
 
     "main": "index.js",
     "license": "Apache-2.0",
